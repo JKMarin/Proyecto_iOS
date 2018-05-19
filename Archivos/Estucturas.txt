@@ -2,3 +2,5 @@ Usuario
 Locaciones
 Categorias
 Favoritos
+https://github.com/malcommac/SwiftLocation
+https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
