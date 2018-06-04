@@ -9,7 +9,7 @@
 import Foundation
 //Estructura lista
 class ListaModel<T>{
-    let lista:[T]
+    var lista:[T]
     
     init(){
         lista = [T]()

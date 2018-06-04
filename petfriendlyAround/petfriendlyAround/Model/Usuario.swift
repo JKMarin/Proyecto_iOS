@@ -17,6 +17,7 @@ class UsuarioModel{
     let fechaNacimiento: Date       //Fecha de Nacimiento
     let genero: Character           //Genero Masculino Femenino
     let contrasenna: String         //Contrasenna del usuario
+    let favoritos: ListaModel<LugarModel> = ListaModel<LugarModel>()
     
     init(_ identificador:String,_ correo:String,_ nombre:String,_ apellidos:String,_ fechaNacimiento:Date,_ genero:Character,_ contrasenna:String){
         self.identificador = identificador
