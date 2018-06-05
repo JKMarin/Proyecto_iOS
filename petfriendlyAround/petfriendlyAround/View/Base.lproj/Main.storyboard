@@ -58,20 +58,45 @@
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="476.31184407796104"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="EnJ-RJ-XHF">
             <objects>
-                <viewController id="TVm-ej-abq" sceneMemberID="viewController">
+                <viewController id="TVm-ej-abq" userLabel="Map View Controller" customClass="MapViewController" customModule="petfriendlyAround" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JjC-Pz-Zge">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrH-ix-D58" userLabel="Map Container">
+                                <rect key="frame" x="0.0" y="64" width="375" height="305"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="q3r-Uy-hYy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="305"/>
+                                    </mapView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="q3r-Uy-hYy" secondAttribute="trailing" id="5Pi-Nq-LRE"/>
+                                    <constraint firstItem="q3r-Uy-hYy" firstAttribute="leading" secondItem="mrH-ix-D58" secondAttribute="leading" id="AQZ-gK-7vT"/>
+                                    <constraint firstAttribute="height" constant="305" id="FRG-c8-mje"/>
+                                    <constraint firstAttribute="bottom" secondItem="q3r-Uy-hYy" secondAttribute="bottom" id="KJB-DV-IIn"/>
+                                    <constraint firstItem="q3r-Uy-hYy" firstAttribute="top" secondItem="mrH-ix-D58" secondAttribute="top" id="Vt3-h2-4MP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mrH-ix-D58" firstAttribute="trailing" secondItem="gaK-rg-cNh" secondAttribute="trailing" id="6Hi-uy-res"/>
+                            <constraint firstItem="mrH-ix-D58" firstAttribute="leading" secondItem="gaK-rg-cNh" secondAttribute="leading" id="c4K-x8-eb3"/>
+                            <constraint firstItem="mrH-ix-D58" firstAttribute="top" secondItem="gaK-rg-cNh" secondAttribute="top" id="gu1-Kg-2m8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gaK-rg-cNh"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="q3r-Uy-hYy" id="j5b-vT-Nio"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0t-4R-EFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="1331"/>
+            <point key="canvasLocation" x="-284" y="1330.8845577211396"/>
         </scene>
         <!--Categorias View Controller-->
         <scene sceneID="EfE-fu-LWK">
@@ -111,7 +136,7 @@
                                 <connections>
                                     <outlet property="categoriaImage" destination="VwV-Ne-tWv" id="KWO-1U-rKK"/>
                                     <outlet property="categoriaLabel" destination="tZt-5U-62e" id="hd8-pc-mAf"/>
-                                    <segue destination="TVm-ej-abq" kind="show" id="uFg-82-cuj"/>
+                                    <segue destination="TVm-ej-abq" kind="show" identifier="segueCategoriaDetalle" id="uFg-82-cuj"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -164,7 +189,9 @@
         <scene sceneID="HD3-z0-RUF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="odQ-wg-M21" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="categorias" id="Li8-5B-bUy"/>
+                    <tabBarItem key="tabBarItem" title="" image="categorias" id="Li8-5B-bUy">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D27-Wc-0q4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

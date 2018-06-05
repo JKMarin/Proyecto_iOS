@@ -13,4 +13,7 @@ class StoreManager{
     func getCategorias() -> ListaModel<CategoriaModel>{
         return StoreMockUp.listarCategorias()
     }
+    func getLugares(porCategoria categoria: Int)-> ListaModel<LugarModel>{
+        return StoreMockUp.getLugares(porCategoria:categoria)
+    }
 }

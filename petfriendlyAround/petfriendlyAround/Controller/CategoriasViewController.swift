@@ -28,6 +28,7 @@ class CategoriasViewController: UICollectionViewController {
         let categoria = categorias.lista[indexPath.row]
         
         cell.displayContent(image: UIImage(named: categoria.nombre)!, title: categoria.nombre)
+        cell.tag = categoria.identificador
         
         return cell
     }
@@ -57,7 +58,16 @@ class CategoriasViewController: UICollectionViewController {
         self.collectionView?.reloadSections(IndexSet(integer: 0))
         
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueCategoriaDetalle"{
+            var detailView = segue.destination
+            let selectedCell = sender as! UICollectionViewCell
+            let index = self.collectionView?.indexPath(for: selectedCell)
+            let categoria = categorias.lista[index!.row]
+            detailView.title = categoria.nombre
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

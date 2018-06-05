@@ -10,11 +10,11 @@ import Foundation
 //Clase del Modelo para la represetacion de las categorias del APP PetFriendlyAround
 
 class CategoriaModel{
-    let identificador: String       //Identificador Unico Autogenerado como UUID o GUID
+    let identificador: Int          //Identificador Unico
     let nombre: String              //Nombre de la categoria
     
     
-    init(_ identificador:String,_ nombre:String){
+    init(_ identificador:Int,_ nombre:String){
         self.identificador = identificador
         self.nombre = nombre
     }

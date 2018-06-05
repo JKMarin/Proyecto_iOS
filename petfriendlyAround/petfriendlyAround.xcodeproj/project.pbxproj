@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47BE3820C64A0400541599 /* MapViewController.swift */; };
 		5C75D22020C537C9005F7236 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */; };
 		5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA520AFD35F0091569D /* AppDelegate.swift */; };
 		5C8F8CAB20AFD35F0091569D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA920AFD35F0091569D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C47BE3820C64A0400541599 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		5C8F8CA220AFD35F0091569D /* petfriendlyAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petfriendlyAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8F8CA520AFD35F0091569D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				5CDC78F020C5152F0000587D /* CollectionViewCell.swift */,
 				5CDC78F220C51AB60000587D /* CategoriasViewController.swift */,
 				5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */,
+				5C47BE3820C64A0400541599 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */,
 				5CDC78EF20C4FE470000587D /* StoreMockUp.swift in Sources */,
 				5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */,
 				5CDC78F320C51AB60000587D /* CategoriasViewController.swift in Sources */,
