@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */; };
 		5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47BE3820C64A0400541599 /* MapViewController.swift */; };
 		5C75D22020C537C9005F7236 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */; };
 		5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA520AFD35F0091569D /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAlertActionViewController.swift; sourceTree = "<group>"; };
 		5C47BE3820C64A0400541599 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		5C8F8CA220AFD35F0091569D /* petfriendlyAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petfriendlyAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				5CDC78F220C51AB60000587D /* CategoriasViewController.swift */,
 				5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */,
 				5C47BE3820C64A0400541599 /* MapViewController.swift */,
+				5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */,
 				5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */,
 				5CDC78EF20C4FE470000587D /* StoreMockUp.swift in Sources */,
 				5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */,
