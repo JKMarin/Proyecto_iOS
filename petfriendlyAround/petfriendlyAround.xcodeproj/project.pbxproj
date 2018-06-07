@@ -18,6 +18,7 @@
 		5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */; };
 		5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC220AFEC110091569D /* ListaModel.swift */; };
 		5C8F8CC520AFF7CA0091569D /* LugarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC420AFF7CA0091569D /* LugarModel.swift */; };
+		5CCAB99020C85DC00022A097 /* MasterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */; };
 		5CDC78ED20C4FD740000587D /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78EC20C4FD740000587D /* StoreManager.swift */; };
 		5CDC78EF20C4FE470000587D /* StoreMockUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78EE20C4FE470000587D /* StoreMockUp.swift */; };
 		5CDC78F120C5152F0000587D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78F020C5152F0000587D /* CollectionViewCell.swift */; };
@@ -38,6 +39,7 @@
 		5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC220AFEC110091569D /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC420AFF7CA0091569D /* LugarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugarModel.swift; sourceTree = "<group>"; };
+		5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMapViewController.swift; sourceTree = "<group>"; };
 		5CDC78EC20C4FD740000587D /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		5CDC78EE20C4FE470000587D /* StoreMockUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMockUp.swift; sourceTree = "<group>"; };
 		5CDC78F020C5152F0000587D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */,
 				5C47BE3820C64A0400541599 /* MapViewController.swift */,
 				5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */,
+				5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				5CDC78F320C51AB60000587D /* CategoriasViewController.swift in Sources */,
 				5CDC78F120C5152F0000587D /* CollectionViewCell.swift in Sources */,
 				5CDC78ED20C4FD740000587D /* StoreManager.swift in Sources */,
+				5CCAB99020C85DC00022A097 /* MasterMapViewController.swift in Sources */,
 				5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */,
 				5C8F8CBB20AFDAA80091569D /* Usuario.swift in Sources */,
 				5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */,

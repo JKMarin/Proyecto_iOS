@@ -12,8 +12,16 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     let regionRadius: CLLocationDistance = 1000
-    let store = StoreManager.sharedInstance
-   
+    //let store = StoreManager.sharedInstance
+    var lugares: ListaModel<LugarModel>?{
+        didSet{
+            refreshUI()
+        }
+    }
+    func refreshUI(){
+        //loadViewIfNeeded()
+    }
+    
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)
@@ -21,7 +29,7 @@ class MapViewController: UIViewController {
     }
     // called when the value of SegmentedControl is changed.
     @IBAction  func mapViewChanged(segcon: UISegmentedControl){
-        segcon.
+        //segcon.
         switch segcon.selectedSegmentIndex {
         case 0:
            // mySegLabel.backgroundColor = UIColor.redColor()
@@ -36,6 +44,18 @@ class MapViewController: UIViewController {
         }
         //self.alert.dismissViewControllerAnimated(true, completion: nil)
     }
+    @IBAction func switchViewTapped(_ sender:UIBarButtonItem!){
+        //self.navigationController?.popViewController(animated: true)
+        guard let rightNavController = self.navigationController ,
+            let leftNavController = splitViewController?.viewControllers.first as? UINavigationController,
+            let masterViewController = leftNavController.topViewController as? MasterMapViewController,
+            //let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
+            let detailMapViewController = rightNavController.topViewController as? MapViewController
+            else {
+                return //throw Error()
+        }
+        //self.splitViewController?.show(splitViewController!.viewControllers.first!, sender: nil)
+    }
     @IBAction func myRightSideBarButtonItemTapped(_ sender:UIBarButtonItem!)
     {
         print("myRightSideBarButtonItemTapped")
@@ -46,7 +66,7 @@ class MapViewController: UIViewController {
             // ...
         }
         
-        let myArray: NSArray = ["Red","Blue","Green"]
+        /*let myArray: NSArray = ["Red","Blue","Green"]
         
          //make SegmentedControl
         let mySegcon: UISegmentedControl = UISegmentedControl(items: myArray as [AnyObject])
@@ -59,7 +79,7 @@ class MapViewController: UIViewController {
             
         }
         
-        alertController.view.addSubview(mySegcon)
+        alertController.view.addSubview(mySegcon)*/
         //let switchAlert = SwitchAlertActionViewController()
         //switchAlert.isSwitchOn = true
         //alertAction1.setValue(SegmentedAlertActionViewController(), forKey: "contentViewController")
@@ -76,20 +96,20 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.s
-        let rightBarButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.myRightSideBarButtonItemTapped(_:)))
-        rightBarButton.image = UIImage(named: "switchList")
+        //let rightBarButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.switchViewTapped(_:)))
+        //rightBarButton.image = UIImage(named: "switchList")
         //self.navigationItem.rightBarButtonItem = rightBarButton
-        self.navigationItem.rightBarButtonItems = [rightBarButton]
-        
+        //self.navigationItem.rightBarButtonItems = [rightBarButton]
+       
         // set initial location 9.9351658,-84.0656517
         let initialLocation = CLLocation(latitude: 9.9366, longitude: -84.0660)
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
         
-        var lugares =  store.getLugares(porCategoria: 0)
+        //var lugares =  store.getLugares(porCategoria: 0)
         
         
-        self.mapView.addAnnotations(lugares.lista)
+        self.mapView.addAnnotations(lugares!.lista)
         
     }
    

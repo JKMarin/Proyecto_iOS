@@ -64,11 +64,29 @@ class CategoriasViewController: UICollectionViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueCategoriaDetalle"{
-            var detailView = segue.destination
+            let fuente = segue.source as? CategoriasViewController
+            guard let splitViewController = segue.destination as? UISplitViewController,
+                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+                let masterViewController = leftNavController.topViewController as? MasterMapViewController,
+                let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
+                let detailMapViewController = rightNavController.topViewController as? MapViewController
+                else {
+                    return //throw Error()
+            }
+            //var detailView = segue.destination
             let selectedCell = sender as! UICollectionViewCell
             let index = self.collectionView?.indexPath(for: selectedCell)
             let categoria = categorias.lista[index!.row]
-            detailView.title = categoria.nombre
+            masterViewController.categoria = categoria.identificador
+            masterViewController.cargarLugares()
+            masterViewController.title = categoria.nombre
+            masterViewController.delegateCategorias = fuente
+            detailMapViewController.title = categoria.nombre
+            
+            detailMapViewController.lugares = masterViewController.lugares
+            detailMapViewController.navigationItem.leftItemsSupplementBackButton = true
+            detailMapViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            
         }
         
     }
@@ -76,6 +94,13 @@ class CategoriasViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func prepareForUnwindWithSegue(segue: UIStoryboardSegue){
+        print("a")
+    }
     
-    
+}
+extension CategoriasViewController: CategoriasControllerDelegate{
+    /*func asociar(forViewController controlador: CategoriasViewController) {
+     self.de
+     }*/
 }
