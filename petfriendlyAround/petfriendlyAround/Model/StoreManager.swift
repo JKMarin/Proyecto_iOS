@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import RealmSwift
+
 class StoreManager{
     static let sharedInstance = StoreManager()
+    static let realm = try! Realm()
     
-    func getCategorias() -> ListaModel<CategoriaModel>{
-        return StoreMockUp.listarCategorias()
+    func getCategorias() -> Results<CategoriaModel>{
+        return StoreManager.realm.objects(CategoriaModel.self)
     }
-    func getLugares(porCategoria categoria: Int)-> ListaModel<LugarModel>{
-        return StoreMockUp.getLugares(porCategoria:categoria)
+    func getLugares(porCategoria categoria: Int)-> Results<LugarModel>{
+        //let predicate = NSPredicate(format: "categoria.identificador = %@", categoria)
+        return StoreManager.realm.objects(LugarModel.self).filter("categoria.identificador = %@", categoria)
+        
+    }
+    func getCategoria(porCategoria categoria: Int)-> CategoriaModel{
+        //let predicate = NSPredicate(format: "categoria.identificador = %@", categoria)
+        return StoreManager.realm.objects(CategoriaModel.self).filter("identificador = %@", categoria).first!
+        
     }
 }

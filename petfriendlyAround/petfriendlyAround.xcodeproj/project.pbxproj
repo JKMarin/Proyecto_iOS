@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8DC291B07CF3ACECE20D3C /* Pods_petfriendlyAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B3EF2341C14F0FFAF15532 /* Pods_petfriendlyAround.framework */; };
+		5C05076520CA97AB00D5BD4B /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */; };
 		5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */; };
 		5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47BE3820C64A0400541599 /* MapViewController.swift */; };
+		5C4F554B20CA4C2300CE68B3 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F554A20CA4C2300CE68B3 /* Mock.swift */; };
+		5C4F554D20CA6AB700CE68B3 /* Anotacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4F554C20CA6AB700CE68B3 /* Anotacion.swift */; };
 		5C75D22020C537C9005F7236 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */; };
 		5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA520AFD35F0091569D /* AppDelegate.swift */; };
 		5C8F8CAB20AFD35F0091569D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA920AFD35F0091569D /* Main.storyboard */; };
@@ -18,7 +22,7 @@
 		5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */; };
 		5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC220AFEC110091569D /* ListaModel.swift */; };
 		5C8F8CC520AFF7CA0091569D /* LugarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC420AFF7CA0091569D /* LugarModel.swift */; };
-		5CCAB99020C85DC00022A097 /* MasterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */; };
+		5CCAB99020C85DC00022A097 /* ListaMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCAB98F20C85DC00022A097 /* ListaMapViewController.swift */; };
 		5CDC78ED20C4FD740000587D /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78EC20C4FD740000587D /* StoreManager.swift */; };
 		5CDC78EF20C4FE470000587D /* StoreMockUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78EE20C4FE470000587D /* StoreMockUp.swift */; };
 		5CDC78F120C5152F0000587D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC78F020C5152F0000587D /* CollectionViewCell.swift */; };
@@ -26,8 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAlertActionViewController.swift; sourceTree = "<group>"; };
 		5C47BE3820C64A0400541599 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5C4F554A20CA4C2300CE68B3 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		5C4F554C20CA6AB700CE68B3 /* Anotacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anotacion.swift; sourceTree = "<group>"; };
 		5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		5C8F8CA220AFD35F0091569D /* petfriendlyAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petfriendlyAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8F8CA520AFD35F0091569D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +46,14 @@
 		5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC220AFEC110091569D /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC420AFF7CA0091569D /* LugarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugarModel.swift; sourceTree = "<group>"; };
-		5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMapViewController.swift; sourceTree = "<group>"; };
+		5CCAB98F20C85DC00022A097 /* ListaMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaMapViewController.swift; sourceTree = "<group>"; };
 		5CDC78EC20C4FD740000587D /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		5CDC78EE20C4FE470000587D /* StoreMockUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMockUp.swift; sourceTree = "<group>"; };
 		5CDC78F020C5152F0000587D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5CDC78F220C51AB60000587D /* CategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasViewController.swift; sourceTree = "<group>"; };
+		78B3EF2341C14F0FFAF15532 /* Pods_petfriendlyAround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petfriendlyAround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3DC2C929B8226C0067E6361 /* Pods-petfriendlyAround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petfriendlyAround.release.xcconfig"; path = "Pods/Target Support Files/Pods-petfriendlyAround/Pods-petfriendlyAround.release.xcconfig"; sourceTree = "<group>"; };
+		DFEDE19F7523677BD1E1FE45 /* Pods-petfriendlyAround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petfriendlyAround.debug.xcconfig"; path = "Pods/Target Support Files/Pods-petfriendlyAround/Pods-petfriendlyAround.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8DC291B07CF3ACECE20D3C /* Pods_petfriendlyAround.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08BAEEBD5FEC9741EFF3A98E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B3EF2341C14F0FFAF15532 /* Pods_petfriendlyAround.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32899D43C794313C3F5B5E53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFEDE19F7523677BD1E1FE45 /* Pods-petfriendlyAround.debug.xcconfig */,
+				B3DC2C929B8226C0067E6361 /* Pods-petfriendlyAround.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5C8F8C9920AFD35F0091569D = {
 			isa = PBXGroup;
 			children = (
 				5C8F8CA420AFD35F0091569D /* petfriendlyAround */,
 				5C8F8CA320AFD35F0091569D /* Products */,
+				32899D43C794313C3F5B5E53 /* Pods */,
+				08BAEEBD5FEC9741EFF3A98E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +124,8 @@
 				5C8F8CC420AFF7CA0091569D /* LugarModel.swift */,
 				5CDC78EC20C4FD740000587D /* StoreManager.swift */,
 				5CDC78EE20C4FE470000587D /* StoreMockUp.swift */,
+				5C4F554A20CA4C2300CE68B3 /* Mock.swift */,
+				5C4F554C20CA6AB700CE68B3 /* Anotacion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,7 +148,8 @@
 				5C75D21F20C537C9005F7236 /* HeaderViewCell.swift */,
 				5C47BE3820C64A0400541599 /* MapViewController.swift */,
 				5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */,
-				5CCAB98F20C85DC00022A097 /* MasterMapViewController.swift */,
+				5CCAB98F20C85DC00022A097 /* ListaMapViewController.swift */,
+				5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -128,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C8F8CB420AFD3600091569D /* Build configuration list for PBXNativeTarget "petfriendlyAround" */;
 			buildPhases = (
+				9F239D17A37A77520C503568 /* [CP] Check Pods Manifest.lock */,
 				5C8F8C9E20AFD35F0091569D /* Sources */,
 				5C8F8C9F20AFD35F0091569D /* Frameworks */,
 				5C8F8CA020AFD35F0091569D /* Resources */,
+				51701C7A767ACC10CC6AF5F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,19 +222,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51701C7A767ACC10CC6AF5F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-petfriendlyAround/Pods-petfriendlyAround-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-petfriendlyAround/Pods-petfriendlyAround-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F239D17A37A77520C503568 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-petfriendlyAround-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5C8F8C9E20AFD35F0091569D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C05076520CA97AB00D5BD4B /* DetalleViewController.swift in Sources */,
 				5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */,
+				5C4F554D20CA6AB700CE68B3 /* Anotacion.swift in Sources */,
 				5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */,
 				5CDC78EF20C4FE470000587D /* StoreMockUp.swift in Sources */,
+				5C4F554B20CA4C2300CE68B3 /* Mock.swift in Sources */,
 				5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */,
 				5CDC78F320C51AB60000587D /* CategoriasViewController.swift in Sources */,
 				5CDC78F120C5152F0000587D /* CollectionViewCell.swift in Sources */,
 				5CDC78ED20C4FD740000587D /* StoreManager.swift in Sources */,
-				5CCAB99020C85DC00022A097 /* MasterMapViewController.swift in Sources */,
+				5CCAB99020C85DC00022A097 /* ListaMapViewController.swift in Sources */,
 				5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */,
 				5C8F8CBB20AFDAA80091569D /* Usuario.swift in Sources */,
 				5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */,
@@ -346,6 +425,7 @@
 		};
 		5C8F8CB520AFD3600091569D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFEDE19F7523677BD1E1FE45 /* Pods-petfriendlyAround.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,6 +443,7 @@
 		};
 		5C8F8CB620AFD3600091569D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3DC2C929B8226C0067E6361 /* Pods-petfriendlyAround.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

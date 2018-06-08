@@ -7,25 +7,25 @@
 //
 
 import Foundation
+import RealmSwift
 //Clase del Modelo para la represetacion de los usuarios del APP PetFriendlyAround
 
-class UsuarioModel{
-    let identificador: String       //Identificador Unico Autogenerado como UUID o GUID
-    let correo: String              //Correo electronico del usuario
-    let nombre: String              //Nombre del usuario
-    let apellidos: String           //Apellidos del usuario
-    let fechaNacimiento: Date       //Fecha de Nacimiento
-    let genero: Character           //Genero Masculino Femenino
-    let contrasenna: String         //Contrasenna del usuario
-    let favoritos: ListaModel<LugarModel> = ListaModel<LugarModel>()
+class UsuarioModel: Object{
+    @objc dynamic var identificador: String = ""       //Identificador Unico Autogenerado como UUID o GUID
+    @objc dynamic var correo: String = ""              //Correo electronico del usuario
+    @objc dynamic var nombre: String = ""              //Nombre del usuario
+    @objc dynamic var apellidos: String = ""           //Apellidos del usuario
+    @objc dynamic var fechaNacimiento: Date = Date()      //Fecha de Nacimiento
+    @objc dynamic var contrasenna: String = ""         //Contrasenna del usuario
+    let favoritos: List<LugarModel> = List<LugarModel>()
     
-    init(_ identificador:String,_ correo:String,_ nombre:String,_ apellidos:String,_ fechaNacimiento:Date,_ genero:Character,_ contrasenna:String){
+    convenience init(_ identificador:String,_ correo:String,_ nombre:String,_ apellidos:String,_ fechaNacimiento:Date,_ contrasenna:String){
+        self.init()
         self.identificador = identificador
         self.correo = correo
         self.nombre = nombre
         self.apellidos = apellidos
         self.fechaNacimiento = fechaNacimiento
-        self.genero = genero
         self.contrasenna = contrasenna
     }
     

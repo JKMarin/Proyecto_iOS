@@ -8,7 +8,7 @@
 
 import Foundation
 //Estructura lista
-class ListaModel<T>{
+class ListaModel123<T>{
     var lista:[T]
     
     init(){

@@ -7,13 +7,13 @@
 //
 import UIKit
 import MapKit
-
+import CoreLocation
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-    
+    var locationManager:CLLocationManager!
     let regionRadius: CLLocationDistance = 1000
     //let store = StoreManager.sharedInstance
-    var lugares: ListaModel<LugarModel>?{
+    var anotaciones: [Anotacion]?{
         didSet{
             refreshUI()
         }
@@ -44,24 +44,24 @@ class MapViewController: UIViewController {
         }
         //self.alert.dismissViewControllerAnimated(true, completion: nil)
     }
-    @IBAction func switchViewTapped(_ sender:UIBarButtonItem!){
-        //self.navigationController?.popViewController(animated: true)
-        guard let rightNavController = self.navigationController ,
-            let leftNavController = splitViewController?.viewControllers.first as? UINavigationController,
-            let masterViewController = leftNavController.topViewController as? MasterMapViewController,
-            //let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
-            let detailMapViewController = rightNavController.topViewController as? MapViewController
-            else {
-                return //throw Error()
-        }
-        //self.splitViewController?.show(splitViewController!.viewControllers.first!, sender: nil)
-    }
-    @IBAction func myRightSideBarButtonItemTapped(_ sender:UIBarButtonItem!)
+    
+    @IBAction func verOpciones(_ sender:MKAnnotationView!)
     {
         print("myRightSideBarButtonItemTapped")
-        let alertController = UIAlertController(title: nil, message: "Selecione la Vista", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: nil, message: "Selecione la accion", preferredStyle: .actionSheet)
         
-        let alertAction1 = UIAlertAction(title: "One", style: UIAlertActionStyle.default, handler: nil)
+        let alertAction1 = UIAlertAction(title: "Seguir la Ruta", style: UIAlertActionStyle.default){ (action) in
+            // Respond to user selection of the action.
+            let location = sender.annotation as! Anotacion
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            location.mapItem().openInMaps(launchOptions: launchOptions)
+        }
+        let alertAction2 = UIAlertAction(title: "Ver Detalle", style: UIAlertActionStyle.default){ (action) in
+            // Respond to user selection of the action.
+            let location = sender.annotation as! Anotacion
+            self.performSegue(withIdentifier: "showDetalleFromMap", sender: location)
+            
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel){ action in
             // ...
         }
@@ -83,8 +83,10 @@ class MapViewController: UIViewController {
         //let switchAlert = SwitchAlertActionViewController()
         //switchAlert.isSwitchOn = true
         //alertAction1.setValue(SegmentedAlertActionViewController(), forKey: "contentViewController")
-        
+        alertAction1.setValue(UIImage(named: "route")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forKey: "image")
+        alertAction2.setValue(UIImage(named: "detalle")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), forKey: "image")
         alertController.addAction(alertAction1)
+        alertController.addAction(alertAction2)
         alertController.addAction(cancelAction)
         
         //let popPresenter = alertController.popoverPresentationController
@@ -102,14 +104,14 @@ class MapViewController: UIViewController {
         //self.navigationItem.rightBarButtonItems = [rightBarButton]
        
         // set initial location 9.9351658,-84.0656517
-        let initialLocation = CLLocation(latitude: 9.9366, longitude: -84.0660)
-        centerMapOnLocation(location: initialLocation)
+        //let initialLocation = CLLocation(latitude: 9.9366, longitude: -84.0660)
+        //centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
         
         //var lugares =  store.getLugares(porCategoria: 0)
         
         
-        self.mapView.addAnnotations(lugares!.lista)
+        self.mapView.addAnnotations(anotaciones!)
         
     }
    
@@ -117,12 +119,24 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "showDetalleFromMap" {
+            if let destination = segue.destination as? DetalleViewController {
+                destination.anotacion = sender as? Anotacion // you can pass value to destination view controller
+                
+                //destination.nombre.text = self.selected?.title
+                //destination.descripcion.text = self.selected?.subtitle
+                //destination.categoria.text = cat.nombre
+                // destination.nomb = arrayNombers[(sender as! UIButton).tag] // Using button Tag
+            }
+        }
+    }
 }
 extension MapViewController: MKMapViewDelegate {
     // 1
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // 2
-        guard let annotation = annotation as? LugarModel else { return nil }
+        guard let annotation = annotation as? Anotacion else { return nil }
         // 3
         let identifier = "marker"
         var view: MKMarkerAnnotationView
@@ -141,8 +155,52 @@ extension MapViewController: MKMapViewDelegate {
         return view
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let location = view.annotation as! LugarModel
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-        location.mapItem().openInMaps(launchOptions: launchOptions)
+        let location = view.annotation as! Anotacion
+        //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        //location.mapItem().openInMaps(launchOptions: launchOptions)
+        verOpciones(view)
+    }
+}
+extension MapViewController: CLLocationManagerDelegate {
+    
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        determineMyCurrentLocation()
+    }
+    
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations.last! as CLLocation
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        let initialLocation = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        centerMapOnLocation(location: initialLocation)
+        locationManager.stopUpdatingLocation()
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
     }
 }

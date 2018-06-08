@@ -12,20 +12,19 @@ import UIKit
 class CategoriasViewController: UICollectionViewController {
     
     let store = StoreManager.sharedInstance
-    var categorias = ListaModel<CategoriaModel>()
-   
+    var categorias: [CategoriaModel] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categorias.lista.count
+        return categorias.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let categoria = categorias.lista[indexPath.row]
+        let categoria = categorias[indexPath.row]
         
         cell.displayContent(image: UIImage(named: categoria.nombre)!, title: categoria.nombre)
         cell.tag = categoria.identificador
@@ -58,34 +57,34 @@ class CategoriasViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        categorias = store.getCategorias()
+        let resultados = store.getCategorias()
+        for categoria in resultados{
+            categorias.append(categoria)
+        }
         self.collectionView?.reloadSections(IndexSet(integer: 0))
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueCategoriaDetalle"{
-            let fuente = segue.source as? CategoriasViewController
-            guard let splitViewController = segue.destination as? UISplitViewController,
-                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-                let masterViewController = leftNavController.topViewController as? MasterMapViewController,
-                let rightNavController = splitViewController.viewControllers.last as? UINavigationController,
-                let detailMapViewController = rightNavController.topViewController as? MapViewController
+           
+            guard  let categoriasViewController = segue.source as? CategoriasViewController,
+                let listaViewController = segue.destination as? ListaMapViewController
                 else {
                     return //throw Error()
             }
             //var detailView = segue.destination
             let selectedCell = sender as! UICollectionViewCell
             let index = self.collectionView?.indexPath(for: selectedCell)
-            let categoria = categorias.lista[index!.row]
-            masterViewController.categoria = categoria.identificador
-            masterViewController.cargarLugares()
-            masterViewController.title = categoria.nombre
-            masterViewController.delegateCategorias = fuente
-            detailMapViewController.title = categoria.nombre
+            let categoria = categorias[index!.row]
+            listaViewController.categoria = categoria.identificador
+            listaViewController.cargarLugares()
+            listaViewController.title = categoria.nombre
+            listaViewController.delegateCategorias = categoriasViewController
+            /*detailMapViewController.title = categoria.nombre
             
             detailMapViewController.lugares = masterViewController.lugares
             detailMapViewController.navigationItem.leftItemsSupplementBackButton = true
-            detailMapViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            detailMapViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem*/
             
         }
         

@@ -1,0 +1,6 @@
+framework module Pods_petfriendlyAround {
+  umbrella header "Pods-petfriendlyAround-umbrella.h"
+
+  export *
+  module * { export * }
+}
