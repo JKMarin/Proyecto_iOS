@@ -16,7 +16,7 @@ class StoreMockUp{
         //mock.cargado=false
         let realm = StoreManager.realm
        try! realm.write {
-            realm.deleteAll()
+           // realm.deleteAll()
         }
         if let selectMocks = realm.objects(Mock.self).filter("id = 'Carga' AND cargado = true") as? Results<Mock>, selectMocks.count > 0{
             print("Ya la Carga Inicial fue realizada...")
@@ -69,6 +69,15 @@ class StoreMockUp{
                 print(lo)
                 print(la)
             }
+            let formatter = DateFormatter()
+            formatter.dateFormat="yyyy-MM-dd"
+            let user = UsuarioModel("jmarin@gmail.com","Juan Carlos","Marin", formatter.date(from: "1979-11-06")!, "123456.Aa")
+            
+            try! realm.write {
+                realm.add(user, update: true)
+                
+            }
+            
             let mock = Mock()
             mock.cargado = true
             try! realm.write {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05DA471F20CB04CA00589449 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA471D20CB04CA00589449 /* LoginController.swift */; };
+		05DA472020CB04CA00589449 /* RegistroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA471E20CB04CA00589449 /* RegistroController.swift */; };
+		05DA472220CB1C4B00589449 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA472120CB1C4B00589449 /* AjustesViewController.swift */; };
+		05DA472420CB258500589449 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA472320CB258500589449 /* UserViewController.swift */; };
 		2B8DC291B07CF3ACECE20D3C /* Pods_petfriendlyAround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B3EF2341C14F0FFAF15532 /* Pods_petfriendlyAround.framework */; };
 		5C05076520CA97AB00D5BD4B /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */; };
 		5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */; };
@@ -18,7 +22,7 @@
 		5C8F8CAB20AFD35F0091569D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F8CA920AFD35F0091569D /* Main.storyboard */; };
 		5C8F8CAD20AFD3600091569D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F8CAC20AFD3600091569D /* Assets.xcassets */; };
 		5C8F8CB020AFD3600091569D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8F8CAE20AFD3600091569D /* LaunchScreen.storyboard */; };
-		5C8F8CBB20AFDAA80091569D /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CBA20AFDAA80091569D /* Usuario.swift */; };
+		5C8F8CBB20AFDAA80091569D /* UsuarioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CBA20AFDAA80091569D /* UsuarioModel.swift */; };
 		5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */; };
 		5C8F8CC320AFEC110091569D /* ListaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC220AFEC110091569D /* ListaModel.swift */; };
 		5C8F8CC520AFF7CA0091569D /* LugarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8F8CC420AFF7CA0091569D /* LugarModel.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05DA471D20CB04CA00589449 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		05DA471E20CB04CA00589449 /* RegistroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroController.swift; sourceTree = "<group>"; };
+		05DA472120CB1C4B00589449 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
+		05DA472320CB258500589449 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
 		5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAlertActionViewController.swift; sourceTree = "<group>"; };
 		5C47BE3820C64A0400541599 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +50,7 @@
 		5C8F8CAC20AFD3600091569D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C8F8CAF20AFD3600091569D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C8F8CB120AFD3600091569D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C8F8CBA20AFDAA80091569D /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		5C8F8CBA20AFDAA80091569D /* UsuarioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioModel.swift; sourceTree = "<group>"; };
 		5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC220AFEC110091569D /* ListaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaModel.swift; sourceTree = "<group>"; };
 		5C8F8CC420AFF7CA0091569D /* LugarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LugarModel.swift; sourceTree = "<group>"; };
@@ -118,7 +126,7 @@
 		5C8F8CB720AFD38D0091569D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C8F8CBA20AFDAA80091569D /* Usuario.swift */,
+				5C8F8CBA20AFDAA80091569D /* UsuarioModel.swift */,
 				5C8F8CBE20AFE78C0091569D /* CategoriaModel.swift */,
 				5C8F8CC220AFEC110091569D /* ListaModel.swift */,
 				5C8F8CC420AFF7CA0091569D /* LugarModel.swift */,
@@ -142,6 +150,8 @@
 		5C8F8CB920AFD3AD0091569D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				05DA471D20CB04CA00589449 /* LoginController.swift */,
+				05DA471E20CB04CA00589449 /* RegistroController.swift */,
 				5C8F8CA520AFD35F0091569D /* AppDelegate.swift */,
 				5CDC78F020C5152F0000587D /* CollectionViewCell.swift */,
 				5CDC78F220C51AB60000587D /* CategoriasViewController.swift */,
@@ -150,6 +160,8 @@
 				5C2A0DD920C7D67C007E3B0E /* SegmentedAlertActionViewController.swift */,
 				5CCAB98F20C85DC00022A097 /* ListaMapViewController.swift */,
 				5C05076420CA97AB00D5BD4B /* DetalleViewController.swift */,
+				05DA472120CB1C4B00589449 /* AjustesViewController.swift */,
+				05DA472320CB258500589449 /* UserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C05076520CA97AB00D5BD4B /* DetalleViewController.swift in Sources */,
+				05DA472420CB258500589449 /* UserViewController.swift in Sources */,
 				5C2A0DDA20C7D67C007E3B0E /* SegmentedAlertActionViewController.swift in Sources */,
 				5C4F554D20CA6AB700CE68B3 /* Anotacion.swift in Sources */,
 				5C47BE3920C64A0400541599 /* MapViewController.swift in Sources */,
@@ -279,10 +292,13 @@
 				5CDC78F120C5152F0000587D /* CollectionViewCell.swift in Sources */,
 				5CDC78ED20C4FD740000587D /* StoreManager.swift in Sources */,
 				5CCAB99020C85DC00022A097 /* ListaMapViewController.swift in Sources */,
+				05DA471F20CB04CA00589449 /* LoginController.swift in Sources */,
 				5C8F8CA620AFD35F0091569D /* AppDelegate.swift in Sources */,
-				5C8F8CBB20AFDAA80091569D /* Usuario.swift in Sources */,
+				5C8F8CBB20AFDAA80091569D /* UsuarioModel.swift in Sources */,
 				5C8F8CBF20AFE78C0091569D /* CategoriaModel.swift in Sources */,
 				5C8F8CC520AFF7CA0091569D /* LugarModel.swift in Sources */,
+				05DA472020CB04CA00589449 /* RegistroController.swift in Sources */,
+				05DA472220CB1C4B00589449 /* AjustesViewController.swift in Sources */,
 				5C75D22020C537C9005F7236 /* HeaderViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
